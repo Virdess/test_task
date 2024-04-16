@@ -64,3 +64,8 @@
 ```cmd
 npm start
 ```
+
+## Либо запустить в docker^
+```cmd
+docker-compose up --build
+```
