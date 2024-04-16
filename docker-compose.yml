@@ -1,0 +1,28 @@
+version: '1'
+services:
+  app:
+    container_name: express_app
+    build: .
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    container_name: postgres_db
+    image: postgres:14
+    ports:
+      - "${DB_PORT}:5432"
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_data:

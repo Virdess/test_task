@@ -59,3 +59,8 @@
 
 ## Для удаления записи
 /records/:id, method "DELETE"
+
+## Запуск проекта:
+```cmd
+npm start
+```
