@@ -13,5 +13,5 @@ require('./routes')(app);
 
 sequelize.sync({ force: false })
   .then(() => {
-    app.listen(process.env.APP_PORT, () => console.log('Server running on http://localhost:3000'));
+    app.listen(process.env.APP_PORT, () => console.log('Server running on http://localhost:' + process.env.APP_PORT));
   });
